@@ -96,6 +96,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 25%),
     radial-gradient(circle at 18% 15%, rgba(255, 255, 255, 0.09), transparent 20%);
@@ -106,6 +107,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  position: relative;
+  z-index: 3;
   max-width: 980px;
   margin: 0 auto 2rem;
   padding: 0.8rem 1rem;
@@ -131,6 +134,7 @@ a {
 }
 
 .topbar__links a {
+  display: inline-flex;
   color: rgba(255, 249, 243, 0.86);
   font-size: 0.95rem;
   padding: 0.2rem 0;
@@ -139,7 +143,7 @@ a {
 .hero__layout {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 520px);
   gap: 2.5rem;
   align-items: start;
   max-width: 1240px;
@@ -256,18 +260,18 @@ a {
 }
 
 .hero__posters {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  align-items: flex-start;
   gap: 1rem;
   min-width: 0;
   align-self: start;
-  align-items: start;
 }
 
 .poster {
   position: relative;
   margin: 0;
   width: 100%;
+  flex: 1 1 0;
   min-width: 0;
   align-self: start;
   padding: 1rem;
@@ -291,7 +295,7 @@ a {
 }
 
 .poster--modern {
-  margin-top: 2.5rem;
+  margin-top: 1.6rem;
 }
 
 .section {
@@ -569,8 +573,12 @@ a {
   }
 
   .hero__facts,
-  .hero__posters,
   .comparison__posters {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__posters {
+    display: grid;
     grid-template-columns: 1fr;
   }
 
