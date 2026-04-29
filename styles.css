@@ -148,6 +148,7 @@ a {
 
 .hero__copy {
   padding: 1.5rem 0 1rem;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -258,12 +259,17 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  align-self: stretch;
+  min-width: 0;
+  align-self: start;
+  align-items: start;
 }
 
 .poster {
   position: relative;
+  margin: 0;
   width: 100%;
+  min-width: 0;
+  align-self: start;
   padding: 1rem;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.78);
